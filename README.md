@@ -13,20 +13,20 @@ https://www.kaggle.com/datasets/hojjatk/mnist-dataset
 The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used for training various image processing systems. The database is also widely used for training and testing in the field of machine learning. It was created by "re-mixing" the samples from NIST's original datasets. The MNIST database contains 60,000 training images and 10,000 testing images, which were were normalized to fit into a 28x28 pixel bounding box and anti-aliased, which introduced grayscale levels.
 
 ##LIBRARIES USED 
-from keras.models import load_model
-from tkinter import *
-import tkinter as tk
-import win32gui
-from PIL import ImageGrab, ImageOps
-import numpy as np
+1. from keras.models import load_model
+2. from tkinter import * 
+3. import tkinter as tk
+4. import win32gui
+5. from PIL import ImageGrab, ImageOps
+6. import numpy as np
 
 ![CODE](image.png)
 ![OUTPUT](image-1.png)
 
 ## RESOURCES USED
-• https://keras.io/examples/vision/handwriting_recognition/ 
-• https://www.geeksforgeeks.org/handwritten-digit-recognition-usingneural-network/ 
-• https://www.researchgate.net/publication/356535395_Handwritten_Digit_Recognition_System 
-• https://data-flair.training/blogs/python-deep-learning-projecthandwritten-digit-recognition/ 
-• https://machinelearningmastery.com/handwritten-digit-recognitionusing-convolutional-neural-networks-python-keras/ 
-• https://towardsdatascience.com/handwritten-digit-mnist-pytorch977b5338e627
+1. https://keras.io/examples/vision/handwriting_recognition/ 
+2. https://www.geeksforgeeks.org/handwritten-digit-recognition-usingneural-network/ 
+3. https://www.researchgate.net/publication/356535395_Handwritten_Digit_Recognition_System 
+4. https://data-flair.training/blogs/python-deep-learning-projecthandwritten-digit-recognition/ 
+5. https://machinelearningmastery.com/handwritten-digit-recognitionusing-convolutional-neural-networks-python-keras/ 
+6. https://towardsdatascience.com/handwritten-digit-mnist-pytorch977b5338e627
