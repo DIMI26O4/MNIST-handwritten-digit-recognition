@@ -1,10 +1,10 @@
 # Importing necessary libraries from Keras
+import tensorflow as tf
 import keras
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras import backend as K
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras import backend as K
 
 # the data, split between train and test sets
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -41,7 +41,7 @@ epochs = 50
 model = Sequential()
 
 # Add a 2D convolutional layer with 32 filters and a 5x5 kernel, with ReLU activation
-model.add(Conv2D(40, kernel_size=(5, 5),activation='relu',input_shape=input_shape))
+model.add(Conv2D(32, kernel_size=(5, 5),activation='relu',input_shape=input_shape))
 
 # Add a 2x2 max pooling layer to reduce the dimensionality
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -58,21 +58,21 @@ model.add(Flatten())
 # Add a fully connected layer with 128 neurons and ReLU activation
 model.add(Dense(128, activation='relu'))
 
-# Add a dropout layer to prevent overfitting (30% dropout rate)
-model.add(Dropout(0.3))
+# Add a dropout layer to prevent overfitting (20% dropout rate)
+model.add(Dropout(0.2))
 
 # Add another fully connected layer with 64 neurons and ReLU activation
 model.add(Dense(64, activation='relu'))
 
-# Add another dropout layer (50% dropout rate)
-model.add(Dropout(0.5))
+# Add another dropout layer (30% dropout rate)
+model.add(Dropout(0.3))
 
 # Add the output layer with 'num_classes' neurons (10) and softmax activation for classification
 model.add(Dense(num_classes, activation='softmax'))
 
 
 # Compile the model with categorical crossentropy loss and the Adadelta optimizer
-model.compile(loss=keras.losses.categorical_crossentropy,optimizer=keras.optimizers.Adadelta(),metrics=['accuracy'])
+model.compile(loss=keras.losses.categorical_crossentropy,optimizer=tf.keras.optimizers.Adam(),metrics=['accuracy'])
 
 
 # Train the model with the training data, validating with the test data
